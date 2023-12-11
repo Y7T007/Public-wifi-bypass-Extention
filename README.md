@@ -6,15 +6,19 @@ This is a Chrome extension that allows you to bypass public wifi redirections.
 
 1. Clone the repository.
 2. Open Chrome and go to `chrome://extensions`.
+
 ![Image Description](.readme_screens/Screenshot%20(478).png)
 
 3. Enable Developer mode.
+
 ![Image Description](.readme_screens/Screenshot%20(479).png)
 
 4. Click on "Load unpacked" and select the cloned repository folder.
+
 ![Image Description](.readme_screens/Screenshot%20(480).png)
 
 5. Your Extention is ready...
+
 ![Image Description](.readme_screens/Screenshot%20(480fd.png))
 
 
