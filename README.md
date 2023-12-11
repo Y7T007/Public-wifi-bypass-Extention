@@ -25,7 +25,12 @@ This is a Chrome extension that allows you to bypass public wifi redirections.
 
 ## Usage
 
-1. Click on the extension icon to redirect each time you want to fast redirect.
+1. When u have an Ad Screen like that on a public wifi :
+
+![Image Description](.readme_screens/Screenshot%20(473).png)
+
+2. Click on the extension icon to redirect each time you want to fast redirect.
+
 
 > Note: After installing the extension, you can use it by simply clicking on the extension icon whenever you want to bypass public wifi redirections. This will allow you to quickly redirect to the desired page without being redirected to the public wifi login page.
 
