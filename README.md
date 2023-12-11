@@ -19,7 +19,7 @@ This is a Chrome extension that allows you to bypass public wifi redirections.
 
 5. Your Extention is ready...
 
-![Image Description](.readme_screens/Screenshot%20(480fd.png)
+![Image Description](.readme_screens/Screenshot480fd.png)
 
 
 
