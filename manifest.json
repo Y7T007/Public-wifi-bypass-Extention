@@ -1,24 +1,21 @@
 {
     "manifest_version": 2,
     "name": "Public Wifi byPass",
-    "version": "0.1",
+    "version": "0.2",
     "description": "Find and redirect to a specific link",
     "permissions": ["activeTab"],
     "browser_action": {
-        "default_icon": {
-        "16": "icon.png",
-        "48": "icon.png",
-        "128": "icon.png"
-        },
+        "default_icon": "icon.png",
         "default_popup": "popup.html"
-    },
-    "icons": {
-        "48": "icon.png"
     },
     "content_scripts": [
         {
-            "matches": ["<all_urls>"],
-            "js": ["content.js"]
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
         }
-    ]
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    }
 }
