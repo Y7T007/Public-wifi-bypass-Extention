@@ -1,6 +1,6 @@
 chrome.webRequest.onBeforeRedirect.addListener(
     function(details) {
-        if (details.type === 'main_frame' && details.error === 'net::ERR_INTERNET_DISCONNECTED') {
+        if (details.type === 'main_frame') {
             // Check if Wi-Fi is turned on
             chrome.system.network.getNetworkInterfaces(function(interfaces) {
                 var wifiConnected = interfaces.some(function(interface) {

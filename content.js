@@ -1,28 +1,20 @@
-chrome.webRequest.onBeforeRedirect.addListener(
-    function(details) {
-        if (details.type === 'main_frame' && details.error === 'net::ERR_INTERNET_DISCONNECTED') {
-            // Check if Wi-Fi is turned on
-            chrome.system.network.getNetworkInterfaces(function(interfaces) {
-                var wifiConnected = interfaces.some(function(interface) {
-                    return interface.type === 'wifi' && interface.prefixLength > 0;
-                });
+chrome.runtime.onMessage.addListener(
+    function (request, sender, sendResponse) {
+        if (request.action === 'extractAndRedirect') {
+        // Extract the link from the script (modify this based on your criteria)
+            var scriptContainingLink = document.querySelector('script'); // Adjust this selector based on the actual structure of the page
 
-                if (!wifiConnected) {
-                    // Wi-Fi is not connected, handle accordingly
-                    console.log('Wi-Fi is not connected');
-                    return;
-                }
+            var linkMatch = scriptContainingLink.textContent.match(/window\.location\.href\s*=\s*['"]([^'"]+)['"]/);
 
-                // Wi-Fi is connected, but internet is not reachable
-                console.log('Internet connection is not available');
+            console.log('content :', scriptContainingLink.textContent );
+        if (linkMatch && linkMatch[1]) {
+            var extractedLink = linkMatch[1];
 
-                // You can add your logic here to handle the redirection
-                chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-                    var activeTab = tabs[0];
-                    chrome.tabs.sendMessage(activeTab.id, { action: 'extractAndRedirect' });
-                });
-            });
+            // Redirect to the extracted link
+            window.location.href = extractedLink;
+        } else {
+            console.log('Link not found in the script.');
         }
-    },
-    { urls: ['<all_urls>'] }
+        }
+    }
 );

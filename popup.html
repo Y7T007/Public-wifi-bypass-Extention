@@ -2,14 +2,27 @@
     <html>
 
     <head>
-    <title>Public_wifi_byPass</title>
-    <script src="popup.js"></script>
+        <title>Public_wifi_byPass</title>
+        <script src="popup.js"></script>
     </head>
 
     <body>
-    <h2>Public_wifi_byPass</h2>
-    
-    <button id="extractAndRedirect">Redirect</button>
+        <h2>Public_wifi_byPass</h2>
+        <div id="result"></div>
+        <button id="extractAndRedirect">Redirect</button>
+        <h3 id="result"></h3>
+        <script>
+            document.getElementById("extractAndRedirect").addEventListener("click", function() {
+                chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+                    chrome.tabs.executeScript(tabs[0].id, { code: "document.documentElement.outerHTML" }, function(result) {
+                        document.getElementById("result").innerText = result[0];
+                    });
+                });
+            });
+        </script>
     </body>
+
+    </html>
+    
 
     </html>
