@@ -1,0 +1,35 @@
+/* FILEPATH: /e:/PROGRAMMING/Chrome ext/Public wifis bypass/popup.css */
+
+body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    width: 200px;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
+}
+/* Style the h1 element */
+h1 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Style the p element */
+p {
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Style the footer element */
+footer {
+    background-color: #333;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+
+}
