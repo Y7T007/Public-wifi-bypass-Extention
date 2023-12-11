@@ -12,8 +12,5 @@ chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     {
       code: `function extractLinks(text) {var urlRegex = /(https?:\\/\\/[^\\s]+)/g;var matches = text.match(urlRegex);return matches || [];}var links = extractLinks(JSON.stringify(Array.from(document.querySelectorAll("script")).map(script => script.innerText)));if (links.length > 0) {if (navigator.onLine) {window.location.href = links[0];} else {console.log("Internet connection not available.");}}`,
     },
-    function () {
-      // Stringify and log the script content
-    }
   );
 });
